@@ -12,7 +12,6 @@
 		E7495A0D2B0F72FC00DB7648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7495A0C2B0F72FC00DB7648 /* Assets.xcassets */; };
 		E7495A102B0F72FC00DB7648 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7495A0F2B0F72FC00DB7648 /* Preview Assets.xcassets */; };
 		E7495A172B0F7EBC00DB7648 /* LightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7495A162B0F7EBC00DB7648 /* LightsView.swift */; };
-		E7D5F2B42B0F8D9600E8B4E6 /* F1 Starting lights sound + download.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E7D5F2B32B0F8D9600E8B4E6 /* F1 Starting lights sound + download.mp3 */; };
 		E7D5F2B62B0F91C900E8B4E6 /* bip_steX0pCO.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E7D5F2B52B0F91C900E8B4E6 /* bip_steX0pCO.mp3 */; };
 		E7D5F2B82B0F9BC800E8B4E6 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D5F2B72B0F9BC800E8B4E6 /* TimerView.swift */; };
 /* End PBXBuildFile section */
@@ -24,7 +23,6 @@
 		E7495A0C2B0F72FC00DB7648 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7495A0F2B0F72FC00DB7648 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E7495A162B0F7EBC00DB7648 /* LightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightsView.swift; sourceTree = "<group>"; };
-		E7D5F2B32B0F8D9600E8B4E6 /* F1 Starting lights sound + download.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "F1 Starting lights sound + download.mp3"; path = "../../../../Downloads/F1 Starting lights sound + download.mp3"; sourceTree = "<group>"; };
 		E7D5F2B52B0F91C900E8B4E6 /* bip_steX0pCO.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bip_steX0pCO.mp3; path = ../../../../Downloads/bip_steX0pCO.mp3; sourceTree = "<group>"; };
 		E7D5F2B72B0F9BC800E8B4E6 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				E7D5F2B52B0F91C900E8B4E6 /* bip_steX0pCO.mp3 */,
-				E7D5F2B32B0F8D9600E8B4E6 /* F1 Starting lights sound + download.mp3 */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -154,7 +151,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7495A102B0F72FC00DB7648 /* Preview Assets.xcassets in Resources */,
-				E7D5F2B42B0F8D9600E8B4E6 /* F1 Starting lights sound + download.mp3 in Resources */,
 				E7D5F2B62B0F91C900E8B4E6 /* bip_steX0pCO.mp3 in Resources */,
 				E7495A0D2B0F72FC00DB7648 /* Assets.xcassets in Resources */,
 			);

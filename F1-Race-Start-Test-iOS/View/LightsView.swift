@@ -37,9 +37,9 @@ struct LightItemView: View {
 
 struct LightsView: View {
     @State private var audioLight: AVAudioPlayer?
-
     @State private var lightsAppear = Array(repeating: false, count: 5)
     @State private var buttonHidden = false
+    @State private var isChrono = false
     
     var body: some View {
         VStack {
@@ -54,24 +54,41 @@ struct LightsView: View {
                         .frame(height: 15)
                 )
             }
+            .padding()
             
             Spacer()
             
-            if !buttonHidden {
-                Button {
-                    startLights()
-                    buttonHidden.toggle()
-                } label: {
-                    Text("START")
-                        .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 50)
-                        .background(.green)
-                        .foregroundColor(.white)
-                        .bold()
-                        .cornerRadius(10)
+            ZStack {
+                Rectangle()
+                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/.opacity(0.01))
+                    .ignoresSafeArea()
+                    .onTapGesture {
+                        isChrono = false
+                    }
+                
+                //if !isChrono && buttonHidden {
+                    TimerView(isStarted: $isChrono)
+                //}
+                
+                if !buttonHidden {
+                    VStack {
+                        Spacer()
+                        
+                        Button {
+                            startLights()
+                            buttonHidden.toggle()
+                        } label: {
+                            Text("START")
+                                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 50)
+                                .background(.green)
+                                .foregroundColor(.white)
+                                .bold()
+                                .cornerRadius(10)
+                        }
+                    }
                 }
             }
         }
-        .padding()
     }
     
     func startLights() {
@@ -85,6 +102,7 @@ struct LightsView: View {
         let time = Double(lightsAppear.count) + Double.random(in: 0.0..<2.0)
         DispatchQueue.main.asyncAfter(deadline: .now() + time) {
             lightsAppear = Array(repeating: false, count: 5)
+            isChrono = true
         }
     }
     
