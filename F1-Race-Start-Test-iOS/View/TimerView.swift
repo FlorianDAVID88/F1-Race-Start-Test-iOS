@@ -24,6 +24,9 @@ struct TimerView: View {
                 startTimer()
             } else {
                 stopTimer()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    resetTimer()
+                }
             }
         })
     }

@@ -60,20 +60,21 @@ struct LightsView: View {
             
             ZStack {
                 Rectangle()
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/.opacity(0.01))
+                    .foregroundColor(.blue.opacity(0.01))
                     .ignoresSafeArea()
                     .onTapGesture {
-                        isChrono = false
+                        if lightsAppear.allSatisfy({ $0 == false }) {
+                            isChrono = false
+                            buttonHidden = false
+                        }
                     }
                 
-                //if !isChrono && buttonHidden {
+                VStack {
                     TimerView(isStarted: $isChrono)
-                //}
-                
-                if !buttonHidden {
-                    VStack {
-                        Spacer()
-                        
+                    
+                    Spacer()
+                    
+                    if !buttonHidden {
                         Button {
                             startLights()
                             buttonHidden.toggle()
