@@ -38,7 +38,7 @@ struct LightItemView: View {
 struct LightsView: View {
     @State private var audioLight: AVAudioPlayer?
     @State private var lightsAppear = Array(repeating: false, count: 5)
-    @State private var buttonHidden = false
+    @Binding var buttonHidden: Bool
     @State private var isChrono = false
     
     var body: some View {
@@ -73,23 +73,14 @@ struct LightsView: View {
                     TimerView(isStarted: $isChrono)
                     
                     Spacer()
-                    
-                    if !buttonHidden {
-                        Button {
-                            startLights()
-                            buttonHidden.toggle()
-                        } label: {
-                            Text("START")
-                                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 50)
-                                .background(.green)
-                                .foregroundColor(.white)
-                                .bold()
-                                .cornerRadius(10)
-                        }
-                    }
                 }
             }
         }
+        .onChange(of: buttonHidden, perform: { value in
+            if value {
+                startLights()
+            }
+        })
     }
     
     func startLights() {
@@ -127,5 +118,5 @@ struct LightsView: View {
 }
 
 #Preview {
-    LightsView()
+    LightsView(buttonHidden: .constant(false))
 }
